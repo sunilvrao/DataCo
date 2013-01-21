@@ -9,6 +9,8 @@ module NavigationHelpers
     case page_name
       when /home page/
         home_index_path
+      when /sign up page/
+        new_user_registration_path
     end
   end
 end
