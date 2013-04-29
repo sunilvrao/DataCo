@@ -7,9 +7,6 @@
   <title>DataCo Solutions</title>
 
   <!-- Meta Data ================ -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -17,17 +14,16 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
   <![endif]-->
 
-  <%= stylesheet_link_tag "application", :media => "all" %>
-
+  <%#= stylesheet_link_tag "application", :media => "all" %>
   <!-- CSS ================ -->
-  <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  <link href="theme.reset.min.css" rel="stylesheet" type="text/css"/>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/theme.reset.min.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/style.css" rel="stylesheet" type="text/css"/>
 
   <!-- Style Switcher DEMO only ================ -->
-  <link href="switcher.css" rel="stylesheet" media="screen" type="text/css"/>
+  <link href="assets/switcher.css" rel="stylesheet" media="screen" type="text/css"/>
 
-  <link rel="stylesheet" type="text/css" media="print" href="print.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="assets/print.css" />
 
   <!-- Icons ================ put your icons and favicons below -->
   <!--http://mathiasbynens.be/notes/touch-icons-->
@@ -47,19 +43,19 @@
   <!-- JS JQuery in the head you can use ajax if you want ================ -->
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="jquery-1.9.1.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="assets/jquery-1.9.1.min.js"><\/script>')</script>
 
   <!--animated slider AND loading note two different scripts one for shitty browsers and one for modern -->
   <!--[if gt IE 8]><!-->
-  <script src='sequence-greater-than-ie-8.jquery-min.js'></script>
+  <script src='assets/sequence-greater-than-ie-8.jquery-min.js'></script>
   <!--<![endif]-->
-  <!--[if lte IE 8]><script src='sequence-less-than-ie-8.jquery-min.js'></script><![endif]-->
+  <!--[if lte IE 8]><script src='assets/sequence-less-than-ie-8.jquery-min.js'></script><![endif]-->
 
   <!-- Add to HEAD after style sheet http://modernizr.com/docs/#installing  ================ -->
-  <script src="modernizr.custom.js?v=2.6.2"></script>
+  <script src="assets/modernizr.custom.js?v=2.6.2"></script>
 
   <!-- Style Switcher  ================ -->
-  <script src="switcheroo.js"></script>
+  <script src="assets/switcheroo.js"></script>
 </head>
 <body>
 
@@ -68,14 +64,14 @@
 <![endif]-->
 
 <!-- begin accesibility skip to nav skip content -->
-<!-- end /.visuallyhidden accesibility-->
-<!-- begin .header-->
 <ul class="visuallyhidden" id="top">
   <li><a href="#nav" title="Skip to navigation" accesskey="n">Skip to navigation</a></li>
   <li><a href="#page" title="Skip to content" accesskey="c">Skip to content</a></li>
 </ul>
 
+<!-- end /.visuallyhidden accesibility-->
 
+<!-- begin .header-->
 <header class="header clearfix">
 
 
@@ -284,6 +280,9 @@ I commented and separeated the html so you can apply it to your site/menu system
 <!-- begin #page - the container for everything but header -->
 <div id="page" class="clearfix">
 
+  <%= bootstrap_flash %>
+  <%= yield %>
+
   <!--begin footer -->
   <footer class="footer clearfix">
     <div class="container">
@@ -410,23 +409,23 @@ I commented and separeated the html so you can apply it to your site/menu system
 <!--*****************Theme switcher html *********************-->
 
 <!-- JS General Site COMBINE AND COMPRESS WHEN YOU FIGURE OUT WHAT YOU WANT TO USE comes with unpacked versions ================ -->
-<script src='theme-menu.js'></script><!-- menu -->
-<script src='jquery.easing-1.3.min.js'></script><!-- easing -->
-<script src='bootstrap.min.js'></script><!-- bootstrap / custom.js loads -->
-<script src='jquery.easytabs.min.js'></script><!-- tabs/testimonials custom.js / loads -->
-<script src='slide-to-top-accordion.min.js'></script><!-- slide to top accordion toggle / custom.js loads -->
-<script src='bootstrap-progressbar.min.js'></script><!-- progress bar loading in page -->
+<script src='assets/theme-menu.js'></script><!-- menu -->
+<script src='assets/jquery.easing-1.3.min.js'></script><!-- easing -->
+<script src='assets/bootstrap.min.js'></script><!-- bootstrap / custom.js loads -->
+<script src='assets/jquery.easytabs.min.js'></script><!-- tabs/testimonials custom.js / loads -->
+<script src='assets/slide-to-top-accordion.min.js'></script><!-- slide to top accordion toggle / custom.js loads -->
+<script src='assets/bootstrap-progressbar.min.js'></script><!-- progress bar loading in page -->
 
 <!-- Fancy Box and Isotope ================ -->
-<script src='jquery.isotope.min.js'></script><!--filter masonry script AND loading-->
-<script src='fancybox/source/custom-fancybox-combined.js' defer></script><!--all fancy box buttons, media, helpers, thumbs AND loading-->
+<script src='assets/jquery.isotope.min.js'></script><!--filter masonry script AND loading-->
+<script src='assets/fancybox/source/custom-fancybox-combined.js' defer></script><!--all fancy box buttons, media, helpers, thumbs AND loading-->
 
 <!-- Sliders ================ -->
-<script src='jquery.flexslider.min.js'></script><!--flexslider (twitter, blog, portfolio, full width) AND loading -->
-<script src='lemmon-slider.min.js'></script><!-- variable width image slider AND loading -->
+<script src='assets/jquery.flexslider.min.js'></script><!--flexslider (twitter, blog, portfolio, full width) AND loading -->
+<script src='assets/lemmon-slider.min.js'></script><!-- variable width image slider AND loading -->
 
 <!--initialize scripts / custom scripts-->
-<script src='custom.js'></script>
+<script src='assets/custom.js'></script>
 
 
 </body>
