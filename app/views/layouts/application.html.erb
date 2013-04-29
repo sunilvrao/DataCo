@@ -82,21 +82,24 @@ I commented and separeated the html so you can apply it to your site/menu system
 
         <div class="nav-collapse collapse">
           <ul class="nav accordmobile pull-right"><!--accordmobile comes in when the browser is at 979px and below, it fixes bugs with bootstrap's toggles of multiple level dropdowns which they are dropping support for and they had lousy support in 2x-->
-            <li><a href="register.html">Register <i class="e-icon-pencil"></i></a></li>
+            <% unless user_signed_in? %>
+            <li><a href="<%= new_user_registration_path %>">Register <i class="e-icon-pencil"></i></a></li>
 
             <!--begin .dropdown .parent -->
             <li class="dropdown parent"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <i class="e-icon-login"></i></a>
               <ul class="dropdown-menu signin"><!--begin .dropdown-menu .signin -->
 
                 <li><!--begin list item / everything goes inside the list item-->
-                  <form><!--begin form add your stuff -->
-                    <input type="text" placeholder="Email">
-                    <input type="password" placeholder="Password">
-                    <label class="checkbox">
-                      <input type="checkbox">
-                      Remember me </label>
-                    <button type="submit" class="btn custom-btn btn-primary">Sign in</button>
-                  </form>
+                  <%= form_for resource, :as => resource_name, :url => session_path(resource_name) do |f| %>
+
+                      <%= f.text_field :email, :placeholder=> "Username" %>
+
+                      <%= f.text_field :password, :placeholder=>"Password" %>
+
+                      <%= button_tag(type: 'submit', class: "btn custom-btn btn-primary") do %>
+                          Sign in
+                      <% end %>
+                  <% end %>
                 </li><!--end list item-->
 
                 <li class="divider"></li><!--divider -->
@@ -106,16 +109,15 @@ I commented and separeated the html so you can apply it to your site/menu system
                 <li>
                   <div class="social clearfix">
                     <a class="fc-webicon facebook large round" href="#" title="Facebook"></a>
-                    <a class="fc-webicon twitter large round" href="#" title="Twitter"></a>
-                    <a class="fc-webicon googleplus large round" href="#" title="Google"></a>
                   </div></li>
 
                 <li class="divider"></li><!--divider -->
 
-                <li><a href="forgot-password.html">Forgot Password</a></li>
+                <li><%= link_to "Forgot password?" , new_password_path(resource_name)%></li>
 
               </ul><!--close .dropdown-menu .signin -->
             </li><!--close .dropdown .parent -->
+            <% end %>
 
             <!--begin .dropdown .parent -->
             <li class="dropdown parent"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Connect <i class="e-icon-comment"></i></a>
@@ -165,11 +167,12 @@ I commented and separeated the html so you can apply it to your site/menu system
 
 
             <!--begin .dropdown .parent -->
+            <% if user_signed_in? %>
             <li class="dropdown parent"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <i class="e-icon-cog"></i></a>
               <ul class="dropdown-menu">
                 <li class="current-user"> <a href="#"> <img class="avatar" src="https://twimg0-a.akamaihd.net/profile_images/568222624/ILUSWEETC_normal.jpg" alt="Christina Arasmo">
                   <div class="name">
-                    <b class="fullname">User Name Goes Here</b><br>
+                    <b class="fullname"><%= current_user.first_name %></b><br>
                     <small> Edit profile </small>
                   </div>
                 </a> </li>
@@ -180,7 +183,7 @@ I commented and separeated the html so you can apply it to your site/menu system
                 <li><a href="#">Help</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Settings</a></li>
-                <li> <a class="js-signout-button" href="#" data-nav="logout">Sign out</a>
+                <li> <a class="js-signout-button" href="<%= destroy_user_session_path %>" data-nav="logout">Sign out</a>
                   <form class="dropdown-link-form signout-form" id="signout-form" action="/logout" method="POST">
                     <input type="hidden" value="" name="" class="">
                     <input type="hidden" name="" class="">
@@ -188,17 +191,9 @@ I commented and separeated the html so you can apply it to your site/menu system
                   </form></li>
               </ul><!--close .dropdown-menu -->
             </li><!--close .dropdown .parent -->
+            <% end %>
 
-            <li class="divider-vertical"></li>
 
-            <li class="search-wrapper">
-              <form action="someaction.php" method="post">
-                <div id="search-trigger">
-                  <i class="e-icon-search"></i>
-                </div>
-                <input placeholder="search + enter" type="text">
-              </form>
-            </li>
           </ul><!-- close nav accordmobile-->
         </div>
         <!--/.nav-collapse -->
