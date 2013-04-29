@@ -409,23 +409,9 @@ I commented and separeated the html so you can apply it to your site/menu system
 <!--*****************Theme switcher html *********************-->
 
 <!-- JS General Site COMBINE AND COMPRESS WHEN YOU FIGURE OUT WHAT YOU WANT TO USE comes with unpacked versions ================ -->
-<script src='assets/theme-menu.js'></script><!-- menu -->
-<script src='assets/jquery.easing-1.3.min.js'></script><!-- easing -->
-<script src='assets/bootstrap.min.js'></script><!-- bootstrap / custom.js loads -->
-<script src='assets/jquery.easytabs.min.js'></script><!-- tabs/testimonials custom.js / loads -->
-<script src='assets/slide-to-top-accordion.min.js'></script><!-- slide to top accordion toggle / custom.js loads -->
-<script src='assets/bootstrap-progressbar.min.js'></script><!-- progress bar loading in page -->
 
-<!-- Fancy Box and Isotope ================ -->
-<script src='assets/jquery.isotope.min.js'></script><!--filter masonry script AND loading-->
-<script src='assets/fancybox/source/custom-fancybox-combined.js' defer></script><!--all fancy box buttons, media, helpers, thumbs AND loading-->
-
-<!-- Sliders ================ -->
-<script src='assets/jquery.flexslider.min.js'></script><!--flexslider (twitter, blog, portfolio, full width) AND loading -->
-<script src='assets/lemmon-slider.min.js'></script><!-- variable width image slider AND loading -->
-
-<!--initialize scripts / custom scripts-->
-<script src='assets/custom.js'></script>
+<%= javascript_include_tag "application" %>
+<%= yield :js %>
 
 
 </body>
