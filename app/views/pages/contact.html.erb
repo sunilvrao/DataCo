@@ -1,0 +1,121 @@
+<div class="page-header">
+  <h1>Contact</h1>
+</div>
+<!--close page-header-->
+
+<div class="main-content">
+
+
+  <div class="container">
+    <div class="row-fluid contact-page">
+      <div class="span4">
+        <form action="contact-action.php" id="contact-form" class="form-horizontal">
+          <fieldset>
+            <div class="control-group">
+              <label for="name">Your Name</label>
+              <input type="text" class="span10" name="name" id="name" />
+            </div>
+            <div class="control-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="span10" name="phone" id="phone" />
+            </div>
+            <div class="control-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="span10" name="email" id="email" />
+            </div>
+            <div class="control-group">
+              <label for="message">Your Message</label>
+              <textarea class="span10" name="message" id="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn custom-btn btn-primary">Send</button>
+          </fieldset>
+        </form>
+      </div>
+      <!--close span4 -->
+
+      <div class="span3">
+        <p><strong>DataCo Solutions</strong><br />
+          85 W. Algonquin Road, Suite 360<br />
+          Arlington Heights, IL 60005<br />
+          <strong>phone:</strong> <a href="tel:8135551234" class="tele">847-290-0636, ext. 261</a><br />
+          <strong>fax:</strong> 847-290-0636, ext. 261<br />
+          <strong>email:</strong> <a href="mailto:email@domain.com">info@datacosolutions.com</a> </p>
+        <h3 class="short_headline margin-top"><span>Follow Us</span></h3>
+
+        <ul class="social">
+          <li><a class="fc-webicon rss round" href="#" title="RSS"></a></li>
+          <li><a class="fc-webicon facebook round" href="#" title="Facebook"></a></li>
+          <li><a class="fc-webicon twitter round" href="#" title="Twitter"></a></li>
+          <li><a class="fc-webicon skype round" href="#" title="Skype"></a></li>
+          <li><a class="fc-webicon dribbble round" href="#" title="dribble"></a></li>
+          <li><a class="fc-webicon linkedin round" href="#" title="Skype"></a></li>
+          <li><a class="fc-webicon pinterest round" href="#" title="pinterest"></a></li>
+        </ul>
+      </div>
+      <!--close span3 -->
+      <div class="span5">
+        <div class="map">
+          <div class="container">
+            <a class="map-link small" href="http://goo.gl/maps/2Q8CE">View Map</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--close row-fluid-->
+
+  </div>
+  <!--close .container -->
+
+</div>
+
+<!--/ .main-content -->
+<%= content_for :js do %>
+
+    <script>
+        (function() {
+
+            $(document).ready(function(){
+                buildMap();
+            });
+
+            var sw = document.body.clientWidth,
+                    bp = 767,
+                    $map = $('.map');
+            var static = "http://maps.google.com/maps/api/staticmap?center=38.896778,-77.031498&zoom=13&markers=38.360844,-81.620803|38.897096,-77.036545&size=767x350&sensor=true";
+            var embed = '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=85+W.+Algonquin+Road,+Suite+360+Arlington+Heights,+IL+60005&amp;aq=&amp;sll=38.895509,-77.038686&amp;sspn=0.011724,0.022724&amp;ie=UTF8&amp;hq=&amp;hnear=85+W+Algonquin+Rd+%23360,+Arlington+Heights,+Cook,+Illinois+60005&amp;t=m&amp;z=14&amp;iwloc=A&amp;ll=42.043709,-87.987511&amp;output=embed"></iframe><br /><small>';
+
+            function buildMap() {
+                if(sw>bp) { //If Large Screen
+                    if($('.map-container').length < 1) { //If map doesn't already exist
+                        buildEmbed();
+                    }
+                } else {
+                    if($('.static-img').length < 1) { //If static image doesn't exist
+                        buildStatic();
+                    }
+                }
+            };
+
+            function buildEmbed() { //Build iframe view
+                $('<div class="map-container"/>').html(embed).prependTo($map);
+            };
+
+            function buildStatic() { //Build static map
+                var mapLink = $('.map-link').attr('href'),
+                        $img = $('<img class="static-img" />').attr('src',static);
+                $('<a/>').attr('href',mapLink).html($img).prependTo($map);
+            }
+
+            $(window).resize(function() {
+                sw = document.body.clientWidth;
+                buildMap();
+                google.maps.event.trigger(map, "resize");
+            });
+
+        })();
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage('resize', "*");
+        }
+    </script>
+<% end %>

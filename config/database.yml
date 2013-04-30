@@ -12,10 +12,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: new_sunil_development
+  database: dataco_development
   pool: 5
   username: root
-  password:
+  password: bangal0re
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,7 +27,7 @@ test: &test
   database: new_sunil_test
   pool: 5
   username: root
-  password:
+  password: bangal0re
 
 production:
   adapter: mysql2

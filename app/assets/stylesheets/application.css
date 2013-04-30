@@ -15,3 +15,54 @@
  *= require switcher
 
  */
+
+iframe {
+    max-width: 100%
+}
+
+.map {margin:3% 0}
+
+/* From http://codepen.io/chriscoyier/full/kycDp */
+.map-container {
+    width: 100%;
+    margin: 0 auto;
+    height: 0;
+    padding-top: 38%;
+    position: relative;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    /* had to specify height/width */
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+@media screen and (min-width: 767px) {
+    .map-container {
+        display: block
+    }
+    .static-img {
+        display: none
+    }
+}
+@media screen and (max-width: 767px) {
+    .static-img {
+        width: 100%
+    }
+    .map-container {
+        display: none
+    }
+}
+@media screen and (min-width:1100px) and (max-width:1499px) {
+    .map-container {
+        padding-top: 25%
+    }
+}
+@media screen and (min-width:1500px) {
+    .map-container {
+        padding-top: 20%
+    }
+}

@@ -10,7 +10,7 @@
 @import url('font-awesome.css'); 	/* font awesome icons*/
 @import url('entypo.css');  		/* entypo icons*/
 @import url('fc-webicons.css');  	/* social icons*/
-@import url('../js/fancybox/source/jquery.fancybox.css');	 /* fancybox combined retina ready custom */
+@import url('jquery.fancybox.css');	 /* fancybox combined retina ready custom */
 
 /* add ons */
 @import url('simple-gallery.css');	/* simple gallery of images*/
@@ -1239,7 +1239,7 @@ ul.navigation li:hover a:before {
     padding: 0;
     position: relative;
     z-index: 1;
-    background: url(../images/3p.png);
+    background: url(/assets/3p.png);
     -webkit-box-shadow: inset 0 4px 5px -2px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: inset 0 4px 5px -2px rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 4px 5px -2px rgba(0, 0, 0, 0.05);

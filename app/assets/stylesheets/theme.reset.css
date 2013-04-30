@@ -686,7 +686,7 @@ ul.pagination li.unavailable a:focus {
 ul.pagination li.current a {
     color: black;
     cursor: default;
-    background: url(../images/7p.png);
+    background: url(7p.png);
 }
 ul.pagination li.current a:hover,
 ul.pagination li.current a:focus {
@@ -1247,7 +1247,7 @@ label.radio.inline {
 }
 .btn.btn-very-subtle {
     background-color: transparent;
-    background: url(../images/7p.png)!important;
+    background: url(7p.png)!important;
     background-repeat: repeat;
     border-color: transparent;
     color: #000!important;

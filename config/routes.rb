@@ -1,5 +1,6 @@
 Ddk::Application.routes.draw do
 
+
   match "/users/auth/:provider/callback" => "sessions#create"
   devise_for :users
 

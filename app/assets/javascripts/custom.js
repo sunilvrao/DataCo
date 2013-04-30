@@ -135,7 +135,7 @@ $('#page').prepend('<span class="bg"></span>');
 	];
 
 	$('.bg').css({
-		'background-image': 'url(assets/images/background/' + images[Math.floor(Math.random() * images.length)] + ')'
+		'background-image': 'url(assets/background/' + images[Math.floor(Math.random() * images.length)] + ')'
 	});
 });
 

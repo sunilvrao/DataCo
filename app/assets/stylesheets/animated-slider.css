@@ -23,44 +23,44 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 }
 
 .slide {
-	    background:url(../images/3p.png);
+    background-image: url(/assets/3p.png);
 }
 
 
 /*------------ media query for devices from 981px and up (Large screens) ------------ */
 @media only screen and (min-width:981px) { 
-	.slide1 .bgimg {background-image: url(../../../demo/sequence/1.jpg);}
-	.slide2 .bgimg {background-image: url(../../../demo/sequence/5.jpg);}
-	.slide3 .bgimg {background-image: url(../../../demo/sequence/2.jpg);}
-	.slide4 .bgimg {background-image: url(../../../demo/sequence/3.jpg);}
-	.slide5 .bgimg {background-image: url(../../../demo/sequence/4.jpg);}
+	.slide1 .bgimg {background-image: url(/assets/demo/sequence/1.jpg);}
+	.slide2 .bgimg {background-image: url(/assets/demo/sequence/5.jpg);}
+	.slide3 .bgimg {background-image: url(/assets/demo/sequence/2.jpg);}
+	.slide4 .bgimg {background-image: url(/assets/demo/sequence/3.jpg);}
+	.slide5 .bgimg {background-image: url(/assets/demo/sequence/4.jpg);}
 
 }
 
 /*------------ media query Medium devices from 501px to 980px ------------ */
-@media only screen and (min-width:481px) and (max-width:980px) { 
-	.slide1 .bgimg {background-image: url(../../../demo/sequence/1-md.jpg);}
-	.slide2 .bgimg {background-image: url(../../../demo/sequence/5-md.jpg);}
-	.slide3 .bgimg {background-image: url(../../../demo/sequence/2-md.jpg);}
-	.slide4 .bgimg {background-image: url(../../../demo/sequence/3-md.jpg);}
-	.slide5 .bgimg {background-image: url(../../../demo/sequence/4-md.jpg);}
+@media only screen and (min-width:481px) and (max-width:980px) {
+	.slide1 .bgimg {background-image: url(/assets/demo/sequence/1-md.jpg);}
+	.slide2 .bgimg {background-image: url(/assets/demo/sequence/5-md.jpg);}
+	.slide3 .bgimg {background-image: url(/assets/demo/sequence/2-md.jpg);}
+	.slide4 .bgimg {background-image: url(/assets/demo/sequence/3-md.jpg);}
+	.slide5 .bgimg {background-image: url(/assets/demo/sequence/4-md.jpg);}
 }
 
 /*------------ media query for Small Screens 500px and down ------------ */
-@media only screen and (max-width: 480px) { 
-	.slide1 .bgimg {background-image: url(../../../demo/sequence/1-sm.jpg);}
-	.slide2 .bgimg {background-image: url(../../../demo/sequence/5-sm.jpg);}
-	.slide3 .bgimg {background-image: url(../../../demo/sequence/2-sm.jpg);}
-	.slide4 .bgimg {background-image: url(../../../demo/sequence/3-sm.jpg);}
-	.slide5 .bgimg {background-image: url(../../../demo/sequence/4-sm.jpg);}
+@media only screen and (max-width: 480px) {
+	.slide1 .bgimg {background-image: url(/assets/demo/sequence/1-sm.jpg);}
+	.slide2 .bgimg {background-image: url(/assets/demo/sequence/5-sm.jpg);}
+	.slide3 .bgimg {background-image: url(/assets/demo/sequence/2-sm.jpg);}
+	.slide4 .bgimg {background-image: url(/assets/demo/sequence/3-sm.jpg);}
+	.slide5 .bgimg {background-image: url(/assets/demo/sequence/4-sm.jpg);}
 }
 
 /*------------ outside media query for Background Images IE ONLY LEGACY BROWSERS ------------ */
-.lt-ie9 .slide1 .bgimg {background-image: url(../../../demo/sequence/1.jpg);}
-.lt-ie9 .slide2 .bgimg {background-image: url(../../../demo/sequence/5.jpg);}
-.lt-ie9 .slide3 .bgimg {background-image: url(../../../demo/sequence/2.jpg);}
-.lt-ie9 .slide4 .bgimg {background-image: url(../../../demo/sequence/3.jpg);}
-.lt-ie9 .slide5 .bgimg {background-image: url(../../../demo/sequence/4.jpg);}
+.lt-ie9 .slide1 .bgimg {background-image: url(/assets/demo/sequence/1.jpg);}
+.lt-ie9 .slide2 .bgimg {background-image: url(/assets/demo/sequence/5.jpg);}
+.lt-ie9 .slide3 .bgimg {background-image: url(/assets/demo/sequence/2.jpg);}
+.lt-ie9 .slide4 .bgimg {background-image: url(/assets/demo/sequence/3.jpg);}
+.lt-ie9 .slide5 .bgimg {background-image: url(/assets/demo/sequence/4.jpg);}
 
 /*------------ end IE background images ------------ */
 
