@@ -108,7 +108,7 @@
                     <ul class="dropdown-menu">
                       <li class="current-user"> <a href="#"> <img class="avatar" src="https://twimg0-a.akamaihd.net/profile_images/568222624/ILUSWEETC_normal.jpg" alt="Christina Arasmo">
                         <div class="name">
-                          <b class="fullname"><%= current_user.first_name %></b><br>
+                          <b class="fullname"><%= current_user.name %></b><br>
                           <small> Edit profile </small>
                         </div>
                       </a> </li>
@@ -161,8 +161,9 @@
                   <li><a href="simple-header.html">White Papers</a></li>
                 </ul></li>
 
-              <li><a href="portfolio-masonry.html">Portfolio</a></li>
-              <li><a href="blog.html">Blogs</a></li>
+              <li><%= link_to "Portfolio", page_path("portfolio") %></li>
+
+              <li><%= link_to "Blogs", page_path("blogs") %></li>
               <li class="dropdown parent">
                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">About DataCo <i class="e-icon-down-open-mini"></i></a>
                 <ul class="dropdown-menu">

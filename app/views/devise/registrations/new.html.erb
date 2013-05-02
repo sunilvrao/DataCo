@@ -1,4 +1,46 @@
-<h2>Sign up</h2>
+<!-- begin #page - the container for everything but header -->
+  <div class="container main-content">
+
+    <div class="form-register">
+
+      <h3 class="short_headline text-center"><span>Join Us</span></h3>
+
+      <div class="social text-center"><div><!--div is for ie7-->
+        <a class="fc-webicon facebook large round" href="<%= user_omniauth_authorize_path(:facebook) %>" title="Facebook"></a>
+        <a class="fc-webicon twitter large round" href="#" title="Twitter"></a>
+        <a class="fc-webicon googleplus large round" href="#" title="Google"></a>
+      </div></div>
+      <hr class="empty">
+      <p class="text-center">Don't have one of these accounts? Use the sign up form below.</p>
+
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div>
+            <%= f.email_field :email, :placeholder=>"Email address", :class=>"input-block-level" %>
+          </div>
+
+          <div>
+            <%= f.password_field :password, :class=>"input-block-level", :placeholder=>"Password" %>
+          </div>
+
+          <div>
+            <%= f.password_field :password_confirmation, :class=>"input-block-level", :placeholder=>"Password Confirmation"  %>
+          </div>
+
+          <div><%= f.submit "Join Us", :class=>"btn custom-btn btn-primary btn-large" %></div>
+      <% end %>
+
+    </div>
+
+    <p class="text-center">Already have an account? <a href="login.html">Login.</a></p>
+
+  </div>
+  <!--close .container main-content -->
+
+
+
+  <h2>Sign up</h2>
 <ul>
   <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
   <li><%= link_to "Sign in with Linked In", '/users/auth/linkedin' %></li>
@@ -7,19 +49,5 @@
   <li><%= link_to "Sign in with Yahoo", '/users/auth/yahoo' %></li>
 </ul>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
 
 <%= render "devise/shared/links" %>
