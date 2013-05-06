@@ -149,17 +149,19 @@
               <li class="dropdown parent">
                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Solutions <i class="e-icon-down-open-mini"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="simple-header.html">Customer Retention</a></li>
-                  <li><a href="simple-header.html">Incremental Modeling</a></li>
-                  <li><a href="simple-header.html">DataCo Loyalty</a></li>
-                </ul></li>
+                  <li><%= link_to "Customer Retention", page_path("solutions/retention") %></li>
+                  <li><%= link_to "Incremental Modeling", page_path("solutions/modeling") %></li>
+                  <li><%= link_to "DataCo Loyalty", page_path("solutions/loyalty") %></li>
+                </ul>
+              </li>
               <li class="dropdown parent">
                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Resources <i class="e-icon-down-open-mini"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="simple-header.html">Calculators</a></li>
-                  <li><a href="simple-header.html">Case Studies</a></li>
-                  <li><a href="simple-header.html">White Papers</a></li>
-                </ul></li>
+                  <li><%= link_to "Calculators", page_path("resources/calculator") %></li>
+                  <li><%= link_to "Case Studies", page_path("resources/case-study") %></li>
+                  <li><%= link_to "White Papers", page_path("resources/white-papers") %></li>
+                </ul>
+              </li>
 
               <li><%= link_to "Portfolio", page_path("portfolio") %></li>
 
@@ -167,17 +169,17 @@
               <li class="dropdown parent">
                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">About DataCo <i class="e-icon-down-open-mini"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="about.html">History</a></li>
-                  <li><a href="testimonials.html">Testimonials</a></li>
-                  <li><a href="faq.html">FAQ</a></li>
-                  <li><%= link_to "Contact", page_path("contact") %></li>
+                  <li><%= link_to "History", page_path("about/history") %></li>
+                  <li><%= link_to "Testimonials", page_path("about/testimonials") %></li>
+                  <li><%= link_to "FAQ", page_path("about/faq") %></li>
+                  <li><%= link_to "Contact", page_path("about/contact") %></li>
 
                 </ul></li>
               <li class="dropdown parent">
                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">News Room <i class="e-icon-down-open-mini"></i></a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "Press Releases   ", page_path("press") %></li>
-                  <li><%= link_to "Media Kit", page_path("media") %></li>
+                  <li><%= link_to "Press Releases", page_path("news-room/press") %></li>
+                  <li><%= link_to "Media Kit", page_path("news-room/media") %></li>
                 </ul></li>
 
             </ul>
