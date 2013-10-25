@@ -17,8 +17,8 @@
         <section>
           <h4>Follow Us</h4>
           <ul class="social">
-            <li><a class="fc-webicon facebook round" href="#" title="Facebook"></a></li>
-            <li><a class="fc-webicon linkedin round" href="#" title="LinkedIn"></a></li>
+            <li><a class="fc-webicon facebook round" href="https://www.facebook.com/pages/DataCo-Solutions/105548099480985" title="Facebook"></a></li>
+            <li><a class="fc-webicon linkedin round" href="http://www.linkedin.com/company/dataco" title="LinkedIn"></a></li>
           </ul>
         </section>
         <!--close section-->
@@ -30,12 +30,14 @@
         <section>
           <h4>Stay In Touch</h4>
           <p>Provide us your contact information and stay in touch!</p>
-          <form action="yourscript.php" method="post">
-            <div class="input-append append-fix custom-append row-fluid">
-              <input type="email" class="span8" placeholder="Email Address" name="email" />
-              <button class="btn btn-primary">Sign Up</button>
-
-            </div></form>
+			<%= form_for Subscription.new, :url => { :controller => "subscriptions", :action => "create" }, :remote => "true" do |f| %>
+ 			  <div class="input-append append-fix custom-append row-fluid">
+	 			<%= f.text_field :email, :id => "email", :class =>"span8", :placeholder => 'Your email address...' %> 
+				<%= f.submit "Sign Up", :class => "btn btn-primary", :id => 'invitation_button' %>
+			  </div> 
+			<% end %>
+			<div id="thanks">
+			</div>
           <!--close input-append-->
         </section>
         <!--close section-->
@@ -73,8 +75,8 @@
   <div class="container">
     <ul class="clearfix">
       <li>© 2013 DataCo Solutons. All rights reserved.</li>
-      <li><a href="#">Privacy</a></li>
-      <li><a href="#">Terms and Conditions</a></li>
+      <li><a href="privacy">Privacy</a></li>
+      <li><a href="/terms">Terms and Conditions</a></li>
     </ul>
   </div>
   <!--close footer-credits container-->

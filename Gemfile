@@ -18,7 +18,7 @@ gem 'omniauth-yahoo'
 
 gem 'pry'
 
-gem 'high_voltage'
+# gem 'high_voltage'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,11 +36,11 @@ group :test, :cucumber, :development do
   gem 'mocha', :require => false
   gem 'factory_girl'
   gem 'database_cleaner'
+  gem 'cucumber-rails'
 end
 
 group :cucumber, :development do
   gem 'capybara'
-  gem 'cucumber-rails'
   gem 'cucumber'
   gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
