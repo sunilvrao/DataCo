@@ -13,7 +13,7 @@ class ContentsController < ApplicationController
   # GET /contents/1
   # GET /contents/1.json
   def show
-    @page_name = params[:cms_page].to_s.gsub(/\W/,'')
+    @page_name = params[:page_name]
     #@page_data = Page.find_by_name(@page_name)
 
     respond_to do |format|
